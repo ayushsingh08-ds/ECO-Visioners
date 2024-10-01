@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - SDG 13: Climate Action</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        let selectedAnswers = [];
+        
+        function handleAnswerChange(questionIndex, selectedValue) {
+            selectedAnswers[questionIndex] = selectedValue;
+        }
+
+        function showResults() {
+            const correctAnswers = ['A', 'C', 'B', 'A', 'D', 'B', 'A', 'B', 'D', 'A'];
+            let score = 0;
+            selectedAnswers.forEach((answer, index) => {
+                if (answer === correctAnswers[index]) {
+                    score++;
+                }
+            });
+            showToast(`Your score: ${score} out of ${correctAnswers.length}`);
+            return false; // Prevent form submission
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 5000); // Hide after 5 seconds
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-100 min-h-screen p-6 flex flex-col items-center justify-center">
+
+    <div class="bg-white shadow-lg rounded-lg p-8 max-w-4xl w-full">
+        <h1 class="text-4xl font-bold text-center text-green-600 mb-8">Climate Action Quiz</h1>
+        
+        <form onsubmit="return showResults();">
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold mb-4">1. What is the main goal of SDG 13?</h2>
+                <div class="space-y-2">
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q1" value="A" onchange="handleAnswerChange(0, 'A')"> A. Combat climate change and its impacts
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q1" value="B" onchange="handleAnswerChange(0, 'B')"> B. Promote economic growth
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q1" value="C" onchange="handleAnswerChange(0, 'C')"> C. Improve education quality
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q1" value="D" onchange="handleAnswerChange(0, 'D')"> D. Reduce inequalities
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold mb-4">2. Which gas is a major contributor to climate change?</h2>
+                <div class="space-y-2">
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q2" value="A" onchange="handleAnswerChange(1, 'A')"> A. Oxygen
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q2" value="B" onchange="handleAnswerChange(1, 'B')"> B. Hydrogen
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q2" value="C" onchange="handleAnswerChange(1, 'C')"> C. Carbon Dioxide
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q2" value="D" onchange="handleAnswerChange(1, 'D')"> D. Nitrogen
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold mb-4">3. What is a consequence of climate change?</h2>
+                <div class="space-y-2">
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q3" value="A" onchange="handleAnswerChange(2, 'A')"> A. More frequent droughts
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q3" value="B" onchange="handleAnswerChange(2, 'B')"> B. Decreased sea levels
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q3" value="C" onchange="handleAnswerChange(2, 'C')"> C. Increased biodiversity
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q3" value="D" onchange="handleAnswerChange(2, 'D')"> D. Cooler temperatures
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold mb-4">4. Which international agreement aims to reduce global warming?</h2>
+                <div class="space-y-2">
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q4" value="A" onchange="handleAnswerChange(3, 'A')"> A. Paris Agreement
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q4" value="B" onchange="handleAnswerChange(3, 'B')"> B. Kyoto Protocol
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q4" value="C" onchange="handleAnswerChange(3, 'C')"> C. Montreal Protocol
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q4" value="D" onchange="handleAnswerChange(3, 'D')"> D. Rio Declaration
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold mb-4">5. What is a renewable energy source?</h2>
+                <div class="space-y-2">
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q5" value="A" onchange="handleAnswerChange(4, 'A')"> A. Coal
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q5" value="B" onchange="handleAnswerChange(4, 'B')"> B. Oil
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q5" value="C" onchange="handleAnswerChange(4, 'C')"> C. Natural Gas
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q5" value="D" onchange="handleAnswerChange(4, 'D')"> D. Solar Energy
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold mb-4">6. What is the greenhouse effect?</h2>
+                <div class="space-y-2">
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q6" value="A" onchange="handleAnswerChange(5, 'A')"> A. A cooling process
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q6" value="B" onchange="handleAnswerChange(5, 'B')"> B. A warming process
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q6" value="C" onchange="handleAnswerChange(5, 'C')"> C. A process that removes CO<sub>2</sub>
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q6" value="D" onchange="handleAnswerChange(5, 'D')"> D. A form of energy
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold mb-4">7. Which of the following is a climate adaptation strategy?</h2>
+                <div class="space-y-2">
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q7" value="A" onchange="handleAnswerChange(6, 'A')"> A. Building sea walls
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q7" value="B" onchange="handleAnswerChange(6, 'B')"> B. Reducing carbon emissions
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q7" value="C" onchange="handleAnswerChange(6, 'C')"> C. Reforestation
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q7" value="D" onchange="handleAnswerChange(6, 'D')"> D. Planting trees
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold mb-4">8. Which is a major consequence of climate change on wildlife?</h2>
+                <div class="space-y-2">
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q8" value="A" onchange="handleAnswerChange(7, 'A')"> A. Increased biodiversity
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q8" value="B" onchange="handleAnswerChange(7, 'B')"> B. Habitat loss
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q8" value="C" onchange="handleAnswerChange(7, 'C')"> C. Improved health
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q8" value="D" onchange="handleAnswerChange(7, 'D')"> D. None of the above
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold mb-4">9. What is the largest source of greenhouse gas emissions?</h2>
+                <div class="space-y-2">
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q9" value="A" onchange="handleAnswerChange(8, 'A')"> A. Agriculture
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q9" value="B" onchange="handleAnswerChange(8, 'B')"> B. Transportation
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q9" value="C" onchange="handleAnswerChange(8, 'C')"> C. Industry
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q9" value="D" onchange="handleAnswerChange(8, 'D')"> D. Energy production
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold mb-4">10. How can individuals help combat climate change?</h2>
+                <div class="space-y-2">
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q10" value="A" onchange="handleAnswerChange(9, 'A')"> A. Using public transport
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q10" value="B" onchange="handleAnswerChange(9, 'B')"> B. Ignoring it
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q10" value="C" onchange="handleAnswerChange(9, 'C')"> C. Driving alone
+                    </label>
+                    <label class="block transition-transform transform hover:scale-105">
+                        <input type="radio" name="q10" value="D" onchange="handleAnswerChange(9, 'D')"> D. None of the above
+                    </label>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-400 transition duration-200 transform hover:scale-105">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="hidden fixed top-5 right-5 bg-green-500 text-white p-4 rounded-lg shadow-lg transition-opacity duration-300">
+        Your score will appear here.
+    </div>
+
+</body>
+</html>

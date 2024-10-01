@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Educational site about SDG 13 - Climate Action with NASA data integration.">
+    <title>ECO Visioners</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans leading-relaxed bg-gray-100">
+
+    <!-- Navigation Bar -->
+    <header class="w-full absolute bg-transparent p-5 text-center z-20">
+        <nav class="flex items-center justify-between">
+            <h1 class="text-3xl font-bold text-white">ECO Visioners 🌱</h1>
+            <div class="block lg:hidden">
+                <button id="hamburger" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+            <ul id="navbar" class="hidden lg:flex flex-col lg:flex-row justify-center space-x-16 mt-6 lg:mt-0">
+                <li><a class="text-white text-xl font-semibold hover:text-yellow-400" href="#home">Home</a></li>
+                <li><a class="text-white text-xl font-semibold hover:text-yellow-400" href="#about">About</a></li>
+                <li><a class="text-white text-xl font-semibold hover:text-yellow-400" href="#activities">Interactive Activities</a></li>
+                <li><a class="text-white text-xl font-semibold hover:text-yellow-400" href="#nasa-data">NASA Earth Data</a></li>
+                <li><a class="text-white text-xl font-semibold hover:text-yellow-400" href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hamburger Menu for Small Devices -->
+    <div id="mobile-menu" class="lg:hidden">
+        <ul class="bg-gray-800 text-white hidden">
+            <li><a class="block px-4 py-2 hover:bg-yellow-400" href="#home">Home</a></li>
+            <li><a class="block px-4 py-2 hover:bg-yellow-400" href="#about">About</a></li>
+            <li><a class="block px-4 py-2 hover:bg-yellow-400" href="#activities">Interactive Activities</a></li>
+            <li><a class="block px-4 py-2 hover:bg-yellow-400" href="#nasa-data">NASA Earth Data</a></li>
+            <li><a class="block px-4 py-2 hover:bg-yellow-400" href="#quiz">Quiz</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-center pt-16">
+        <video id="background-audio" autoplay muted loop preload="auto" class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="./heroVideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="relative z-10 text-white">
+            <h2 class="text-4xl md:text-5xl font-semibold">Take Action on Climate Change</h2>
+            <p class="mt-4 text-lg">Learn how you can make a difference through the power of Earth observations and science.</p>
+            <button class="mt-6 bg-yellow-400 text-white py-2 px-4 rounded hover:bg-yellow-300 transition duration-200">Get Started</button>
+        </div>
+    </section>
+
+    <!-- About SDG 13 Section -->
+    <section id="about" class="py-16 bg-white">
+        <h2 class="text-3xl text-center mb-5">About SDG 13: Climate Action</h2>
+        <p class="max-w-2xl mx-auto text-center text-gray-700">SDG 13 focuses on urgent action to combat climate change and its impacts. Explore how weather, geology, and soil health relate to our changing planet.</p>
+    </section>
+
+    <!-- Interactive Activities Section -->
+    <section id="activities" class="py-16 bg-gray-100">
+        <h2 class="text-3xl text-center mb-5">Interactive Activities</h2>
+        <div class="flex justify-around flex-wrap">
+            <div class="bg-white p-5 m-2 shadow rounded w-full md:w-1/3 text-center">
+                <h3 class="text-xl font-semibold">Track CO<sub>2</sub> Emissions</h3>
+                <p>Use NASA data to explore CO<sub>2</sub> levels in different regions.</p>
+            </div>
+            <div class="bg-white p-5 m-2 shadow rounded w-full md:w-1/3 text-center">
+                <h3 class="text-xl font-semibold">Monitor Global Temperature</h3>
+                <p>Explore trends in temperature change across the globe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NASA Earth Data Section -->
+    <section id="nasa-data" class="py-16 bg-white">
+        <h2 class="text-3xl text-center mb-5">NASA Earth Data</h2>
+        <p class="max-w-2xl mx-auto text-center text-gray-700">NASA provides real-time data on climate patterns using Earth observation tools. Access datasets and visualizations to better understand climate trends.</p>
+        <div class="text-center mt-5">
+            <img src="nasa-data-map.jpg" alt="NASA Earth Data" class="max-w-full h-auto mx-auto">
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="py-16 bg-gray-100 flex flex-col items-center">
+        <h2 class="text-3xl text-center mb-5">Test Your Knowledge</h2>
+        <img src="https://img.freepik.com/premium-vector/job-exam-test-vector-illustration_138676-243.jpg" alt="Quiz Illustration" class="mix-blend-multiply mb-6 max-w-xs md:max-w-md">
+        <div class="text-center">
+            <a href="quiz.html" class="mt-6 bg-yellow-400 text-white py-2 px-4 rounded hover:bg-yellow-300 transition duration-200 animate-bounce">Start Quiz</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p>&copy; 2024 ECO Visioners. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Audio Control and Hamburger Menu -->
+    <script src="script.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu').querySelector('ul');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
