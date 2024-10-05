@@ -9,3 +9,23 @@
 body{
     overflow-x: hidden;
 }
+ /* Adjust the logo size and spacing */
+/* Adjust the logo size and spacing */
+.h-12 {
+    height: 4vh; /* Smaller size for the icon */
+    width: auto; /* Maintain the aspect ratio */
+    margin-left: 0.3rem; /* Small space between the text and the logo */
+}
+
+/* Flex container to align text and logo horizontally */
+nav .flex {
+    display: flex;
+    align-items: center;
+}
+
+/* Adjust the padding of the nav to create distance from the left corner */
+nav {
+    padding-left: 0.5rem; /* Adjust this value to control the distance from the left edge */
+}
+
+
